@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Drum Machine</title>
+        <!-- style sheet  -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- russo one font -->
+        <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        
+        
+        <div id="drum-machine" class="drum-machine">
+            <div class="drum-pad-container">
+                <div class="drum-pad drum-pad--Q" id="Heater 1" onclick="drumPadOnClick(event)">
+                    Q
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" class="clip" id="Q">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>       
+                <div class="drum-pad drum-pad--W" id="Heater 2" onclick="drumPadOnClick(event)">
+                    W
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" class="clip" id="W">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--E" id="Heater 3" onclick="drumPadOnClick(event)">
+                    E
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" class="clip" id="E">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--A" id="Heater 4" onclick="drumPadOnClick(event)">
+                    A
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" class="clip" id="A">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--S" id="Clap" onclick="drumPadOnClick(event)">
+                    S
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" class="clip" id="S">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--D" id="Open HH" onclick="drumPadOnClick(event)">
+                    D
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" class="clip" id="D">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--Z" id="Kick n' Hat" onclick="drumPadOnClick(event)">
+                    Z
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" class="clip" id="Z">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--X" id="Kick" onclick="drumPadOnClick(event)">
+                    X
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" class="clip" id="X">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+                <div class="drum-pad drum-pad--C" id="Close HH" onclick="drumPadOnClick(event)">
+                    C
+                    <audio src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" class="clip" id="C">
+                        <source src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" type="audio/mpeg">
+                        <!-- <source src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" type="audio/mpeg"> -->
+                    </audio>
+                </div>
+
+            </div>
+
+            <div class="monitor">
+
+                <div style="text-align: center; margin-top: 20px;">Power</div>
+
+                <label class="switch" id="power">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label><br><br>
+            
+                <div id="display" class="display">
+                    
+                </div>
+
+                <input type="range" min="0" max="100" value="50" id="volume-slider">
+
+                <div style="text-align: center; margin-top: 20px;">Bank</div>
+
+                <label class="switch" id="bank">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label><br><br>
+                        
+            </div>
+            
+        </div>
+        
+        <!-- for testing as a freecodecamp project -->
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+        
+
+    </body>
+
+    <!-- javascript -->
+    <script src="script.js"></script>
+</html>

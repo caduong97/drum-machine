@@ -1,0 +1,248 @@
+body {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.1em;
+    background-color: #8D8D8D;
+    position: relative;
+}
+
+/* drum machine container */
+.drum-machine {
+    background-color: #B3B3B3;
+    border: 5px solid #FFA51A;
+
+    position: absolute;;
+    width: 670px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+
+    margin: 300px 0 0 -350px;
+
+    padding: 30px 0 30px 30px;
+    
+}
+
+
+/* drum pads */
+.drum-pad-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 80px);
+    grid-gap: 10px;
+    float: left;
+
+    
+    
+}
+
+.drum-pad {
+    background-color: #808080;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.85);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.85);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.85);
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 80px;
+
+    
+}
+
+.drum-pad-on-click {
+    animation: drumpadCheck .5s;
+}
+
+
+.drum-pad--Q {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+}
+
+.drum-pad--W {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.drum-pad--E {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.drum-pad--A {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.drum-pad--S {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.drum-pad--D {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.drum-pad--Z {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.drum-pad--X {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.drum-pad--C {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+
+
+/* monitor and display board on the left */
+.monitor {
+    float: right;
+    width: 350px;
+    height: 100%;
+    position: relative; 
+}
+
+/* switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+
+    left: 50%;
+
+    margin: 0 0 0 -30px
+    
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #0108EF;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* display drum key */
+.display {
+    position: relative;
+    background-color: #808080;
+    width: 220px;
+    height: 50px;
+
+    left: 50%;
+
+    margin: 0 0 0 -110px;
+
+    text-align: center;
+    line-height: 50px;
+}
+
+/* volume slider */
+#volume-slider {
+    position: relative;
+    -webkit-appearance: none;
+    width: 260px;
+    height: 3px;
+    background: #494949;
+    outline: none;
+    border: 1px solid black;
+
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.8);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.8);
+
+    left: 50%;
+
+
+    margin: 25px 0 0 -130px
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 7px;
+    height: 25px;
+    background: #0108EF;
+    cursor: pointer;
+    
+    -webkit-box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+    box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+}
+  
+#volume-slider::-moz-range-thumb {
+    width: 7px;
+    height: 25px;
+    background: #0108EF;
+    cursor: pointer;
+
+    -webkit-box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+    box-shadow: 0.5px 0.5px 1px 0.5px rgba(0,0,0,0.8);
+}
+  
+/* keyframes  */
+@keyframes drumpadCheck
+{
+    from {background:orange;}
+    to {background:#808080;}
+}
+
+
+
+
+
